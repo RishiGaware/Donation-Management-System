@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Receipt Page</title>
+        <link rel="stylesheet" href="/public/user_receipt.css">
+
+        
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"rel="stylesheet"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <div class="backword">
+            <a href="/user/userpage"><i class="fa-solid fa-left-long" style="color:aliceblue"></i></a>
+            <!-- <i class="fa-solid fa-right-long"  style="color:aliceblue"></i> -->
+        </div>
+
+        <div class="form-container">
+        
+            <form action="/user/userpage/receipt_submit" class="main_form" method="post">
+                <h3><b>FUND RECEIPT</b></h3>
+                <div class="form_group">
+                    <label for="receipt_no">RECEIPT NO : 2023-24 /</label>
+                    <input type="text" id="receipt_no" name="receipt_no" placeholder="Enter Receipt Number" required autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="date">DATE :</label>
+                    <input type="date" id="date" name="date" placeholder="" required autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="name">RECEIVED WITH THANKS FROM MR./MRS.NAME :</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name" required autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="pancard_no">PANCARD NO :</label>
+                    <input type="text" id="pancard_no" name="pancard_no" placeholder="Enter PANCARD Number" required autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="address">ADDRESS :</label>
+                    <input type="text" id="address" name="address" placeholder="Enter Address" required autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="sum_of_rs">TO SUM OF RS. :</label>
+                    <input type="number" id="sum_of_rs" name="sum_of_rs" placeholder="Enter Sum Of Rs." required autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="transfer_no">Towards ELECTION FUND By Cash/Cheque/transfer No :</label>
+                    <input type="number" id="transfer_no" name="transfer_no" placeholder="Enter Transection Number" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="drawn_on">DRAWN ON :</label>
+                    <input type="text" name="drawn_on" id="drawn_on" placeholder="Enter Drawn On" required>
+                </div>
+                <div class="form-group">
+                    <label for="rs">RS. :</label>
+                    <input type="number" name="rs" id="rs" placeholder="Enter Rupees" required>
+                </div>
+    
+                <button type="submit" class="submit-btn">Submit Receipt</button>
+            </form>
+        </div>
+    </body>
+</html>

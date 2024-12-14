@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviewer Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/reviewerpage.css">
+    
+  </head>
+  <body>
+    <div class="main_box">
+      <input type="checkbox" id="check" />
+      <div class="btn_one">
+        <label for="check" >
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <div class="welcome">
+          <h1 style="color: rgb(255, 255, 255);">Welcome <%= users.firstname%> <%= users.lastname%></h1>
+          <h3 style="color: rgb(168, 168, 168);">Role ( <%= users.role %> )</h3>
+        </div>
+      </div>
+      
+      
+    
+      <div class="sidebar_menu">
+        <div class="logo">
+          <a href="/reviewer/reviewer_page"><b>FUND RECEIPTS</b></a>
+        </div>
+        <div class="btn_two">
+          <label for="check" >
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li> 
+              <a href="/reviewer/reviewer_page/reviewer_records"><i class="fa-solid fa-address-book"></i></a>
+              <a href="/reviewer/reviewer_page/reviewer_records">All RECORDS</a>
+            </li> 
+          </ul>
+        </div>
+        
+        <div class="logout">
+          <ul>
+            <li>
+              <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+              <a href="/logout">LOGOUT</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User Page</title>
+   <link rel="stylesheet" href="/public/registeruser.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="backword">
+        <a href="/admin/adminpage"><i class="fa-solid fa-left-long" style="color:aliceblue"></i></a>
+        <!-- <i class="fa-solid fa-right-long"  style="color:aliceblue"></i> -->
+    </div>
+
+    <div class="form-container">
+       
+        <form action="/admin/adminpage/user_signup" id="main_form" class="main_form" method="post">
+            <h3><b>User Signup</b></h3>
+            <div class="form_group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname" required autocomplete="off">
+            </div>
+            <div class="form_group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname" required autocomplete="off">
+            </div>
+            <div class="form_group">
+                <label for="username">username</label>
+                <input type="email" id="username" name="username" autocomplete="email" maxlength="60"  placeholder="Enter Username" title="Enter Valid Email.!" required autocomplete="off">
+                <p id="">Username Must Be Email.! .!</p>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password" required>
+                <p id="password_alert">Weak Password.!</p>
+            </div>
+            <!-- <div class="form-group">
+                <label for="role">Role</label>
+                <input type="text" name="role" id="role" placeholder="Enter Role" required>
+                <p id="role_alert">Invalid Role.!</p>
+            </div> -->
+            <input type="hidden" name="role" id="role" value="user" required>
+
+            <button type="submit" class="submit-btn" onclick="alertMassage();">signup</button>
+        </form>
+    </div>
+    <script src="/public/registeruser.js"></script>
+</body>
+ </html>
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User Page</title>
+   <link rel="stylesheet" href="/public/profilepage.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">    
+
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="backword">
+        <a href="/admin/adminpage"><i class="fa-solid fa-left-long" style="color:aliceblue"></i></a>
+        <!-- <i class="fa-solid fa-right-long"  style="color:aliceblue"></i> -->
+    </div>
+
+    <% if(org){ %>
+        <div class="form-container" >
+            <form action="/admin/adminpage/profile_page/update_org" class="main_form" method="post">
+                <h3><b>Company Profile</b></h3>
+                <div class="form_group">
+                    <label for="firstname">Name :</label>
+                    <input type="text" id="name" name="name" placeholder="<%= org.name %>"  autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="lastname">Register Number</label>
+                    <input type="number" id="reg_no" name="reg_no" placeholder="<%= org.reg_no %>"  autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="username">PAN Number :</label>
+                    <input type="text" id="pan_no" name="pan_no" placeholder="<%= org.pan_no %>"  autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="password">Gujrat Office Number :</label>
+                    <input type="number" name="gujrat_office" id="gujrat_office" placeholder="<%= org.gujrat_office %>" >
+                </div>
+                <div class="form-group">
+                    <label for="role">Email</label>
+                    <input type="email" name="email" id="email" placeholder="<%= org.email %>" >
+                </div>
+    
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        
+    <% }else { %>
+        <div class="form-container">
+            <form action="/admin/adminpage/profile_page/create_org" class="main_form" method="post">
+                <h3><b>Create Company Profile</b></h3>
+                <div class="form_group">
+                    <label for="name">Name :</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Org Name" required autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="reg_no">Register Number</label>
+                    <input type="number" id="reg_no" name="reg_no" placeholder="Enter Register Number" required autocomplete="off">
+                </div>
+                <div class="form_group">
+                    <label for="pan_no">PAN Number :</label>
+                    <input type="text" id="pan_no" name="pan_no" placeholder="Enter PAN Number" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="gujrat_office">Gujrat Office Number :</label>
+                    <input type="number" name="gujrat_office" id="gujrat_office" placeholder="Enter Gujrat Office Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter Email Address" required>
+                </div>
+    
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    <% } %>
+</body>
+ </html>

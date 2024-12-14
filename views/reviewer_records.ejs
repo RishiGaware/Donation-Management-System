@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewer Records page</title>
+    <link rel="stylesheet" href="/public/reviewer_records.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">  
+
+</head>
+<body>
+    <div class="backword">
+        <a href="/reviewer/reviewer_page"><i class="fa-solid fa-left-long"></i></a>
+        <!-- <i class="fa-solid fa-right-long"  style="color:aliceblue"></i>  -->
+        <h2 style="color: #272d3b; margin-left: 5%;">REVIEWER RECORDS :</h2>
+    </div>
+    <div class="container">
+        <div class="table_head">
+            <table>
+                <thead>
+                    <tr class="head">
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">RECEIPT_NO</th>
+                        <!-- <th scope="col">RECEIPT_DATE</th> -->
+                        <th scope="col">PAN_NO</th>
+                        <th scope="col">ADDRESS</th>
+                        <th scope="col">SUM_OF_RS</th>
+                        <th scope="col">TRANSFER_NUMBER</th>
+                        <th scope="col">DRAWN_ON</th>
+                        <th scope="col">RS</th>
+                        <th scope="col">CREATED BY</th>
+                        <th scope="col">UPDATE</th>
+                        <th scope="col">ACTION</th>
+                        <th scope="col">&nbsp;</th>
+                        <th scope="col">PRINT RECORD</th>
+                    </tr>
+                </thead>
+                <div class="table_body">
+                    <tbody>
+                        <% let count = 0%>
+                        <% receipts.forEach(function(receipt) { %>
+                            <tr>
+                                <form action="/reviewer/reviewer_page/update_reviewer_records" method="post">
+                                    <td><%= ++count %></td>
+                                        <% let receiptDate =  receipt.RECEIPT_DATE ; %>
+                                        <% let parsedDate = new Date(receiptDate); %>
+                                        <% let formattedDate = parsedDate.toDateString(); %>
+
+                                    <td><%= receipt.NAME %></td>
+                                    <td><%= receipt.RECEIPT_NO %></td>
+                                        <!-- <td><%= receipt.RECEIPT_DATE %>"></td> -->
+                                    <td><%= receipt.PAN_NO %></td>
+                                    <td><%= receipt.ADDRESS %></td>
+                                    <td><%= receipt.SUM_OF_RS %></td>
+                                    <td><%= receipt.TRANSFER_NUMBER %></td>
+                                    <td><%= receipt.DRAWN_ON %></td>
+                                    <td><%= receipt.RS %></td>
+                                    <td><%= receipt.CREATED_BY %> ( <%= formattedDate %> )</td>
+                                    
+                                        <input type="hidden" name="count" value="<%= count %>">
+                                        <input type="hidden" name="ID" value="<%= receipt.ID %>">
+                                        <td><button type="submit">&nbsp;Edit&nbsp;</button></td>
+                                </form>
+                                <% if(receipt.APPROVAL_STATUS === "approved"){ %>
+                                    <td><%= receipt.APPROVAL_STATUS %></td>
+                                    <td>    </td>
+                                    <form action="/reviewer/reviewer_page/reviewer_records/print" method="post">
+                                        <td>
+                                            <input type="hidden" name="ID" value="<%= receipt.ID %>">
+                                            <button id="printButton" onclick = "printRecord()" type="submit">   &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-print"></i> &nbsp;&nbsp; Print &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                        </td>
+                                    </form>
+
+                                <% }else{ %>
+                                    <form action="/reviewer/reviewer_page/reviewer_records/approved" method="post">
+                                        <input type="hidden" name="ID" value="<%= receipt.ID %>">
+                                        <td><a href="/reviewer/reviewer_page/reviewer_records/approved"><button type="submit">&nbsp;&nbsp;<i style="color: rgb(70, 198, 155);" class="fa-solid fa-check"></i>&nbsp;&nbsp;</button></td>
+                                    </form>
+                                    <form action="/reviewer/reviewer_page/reviewer_records/deleted" method="post">
+                                        <input type="hidden" name="ID" value="<%= receipt.ID %>">
+                                        <% const receiptID = receipt.ID %>
+                                        <td>
+                                            <a href="/reviewer/reviewer_page/reviewer_records/deleted"><button type="submit">&nbsp;&nbsp;<i style="color: rgb(194, 48, 48);" class="fa-solid fa-circle-xmark"></i>&nbsp;&nbsp;</button></a>
+                                        </td>
+                                        <td></td>
+                                    </form>
+                                <% } %>
+
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </div>            
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user receipt page</title>
+    <link rel="stylesheet" href="/public/edit_user_receipt.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">  
+
+</head>
+<body>
+    <div class="backword">
+        <a href="/user/userpage"><i class="fa-solid fa-left-long"></i></a>
+        <!-- <i class="fa-solid fa-right-long"  style="color:aliceblue"></i>  -->
+        <h2 style="color: rgb(49, 49, 49); margin-left: 5%;"><b>USER RECEIPT :</b></h2>
+    </div>
+    <div class="container">
+        <div class="table">
+            <table id="data_table">
+                <thead>
+                    <tr class="head">
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">RECEIPT_NO</th>
+                        <th scope="col">RECEIPT_DATE</th>
+                        <th scope="col">PAN_NO</th>
+                        <th scope="col">ADDRESS</th>
+                        <th scope="col">SUM_OF_RS</th>
+                        <th scope="col">TRANSFER_NUMBER</th>
+                        <th scope="col">DRAWN_ON</th>
+                        <th scope="col">RS</th>
+                        <th scope="col">UPDATE</th>
+                    </tr>
+                </thead>
+                <div class="table_body">
+                    <tbody>
+                        <% let count = 0%>
+                        <% receipts.forEach(function(receipt) { %>
+                            <tr class="table_rows">
+                                
+                                <form action="/user/userpage/edit_receipts" method="post">
+                                    <td><%= ++count %></td>
+                                        <% let receiptDate =  receipt.RECEIPT_DATE ; %>
+                                        <% let parsedDate = new Date(receiptDate); %>
+                                        <% let formattedDate = parsedDate.toDateString(); %>
+                                    <td><%= receipt.NAME %></td>
+                                    <td><%= receipt.RECEIPT_NO %></td>
+                                    <td><%= formattedDate %></td>
+                                    <td><%= receipt.PAN_NO %></td>
+                                    <td><%= receipt.ADDRESS %></td>
+                                    <td><%= receipt.SUM_OF_RS %></td>
+                                    <td><%= receipt.TRANSFER_NUMBER %></td>
+                                    <td><%= receipt.DRAWN_ON %></td>
+                                    <td><%= receipt.RS %></td>
+
+                                        <input type="hidden" name="count" value="<%= count %>">
+                                        <input id="scrollToElementId" type="hidden" name="ID" value="<%= receipt.ID %>">
+                                        <td><button type="submit">&nbsp;&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;&nbsp; </button></td>
+                                </form>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </div>            
+            </table>
+        </div>
+</div>
+<script src="/public/edit_user_recceipt.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Reviewer Records Page</title>
+    <link rel="stylesheet" href="/public/receipt_print_format.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body onload="printbtn()">
+    <div class="main_container">
+        <div class="container">
+            <div class="heading">
+                <!-- <button id="btn" class="button-29" onclick="printbtn()">Print</button> -->
+                <h3>GUJRAT STATE</h3>
+                <h5>Registeres Under Section 29-A of the Representation Of The People Act 1951 As Political Party </h5>
+                <h4>Register No : </h4>
+                <h1 id="heading">RECEIPT</h1>
+            </div>
+        </div>
+    
+        <div class="body1">
+                <p>Receipt No : &nbsp;<b><u><%= Receipt.RECEIPT_NO %></u></b></p>
+                <p class="date">Date : </p>
+                
+        </div>
+        <div class="body2">
+            <p>Received With Thanks From Mr./Mrs./M/s. :&nbsp;&nbsp;  <b><U><%= Receipt.NAME %></U></b></p>
+        </div>
+        <div class="body3">
+            <p>
+                <br>
+                PAN No : &nbsp;&nbsp;&nbsp;&nbsp;<b><U><%= Receipt.PAN_NO %></U></b>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Address : &nbsp;&nbsp;<b><U><%= Receipt.ADDRESS %></U> </b>
+                <!-- <b>&nbsp;________________________________________________________________________________</b> -->
+                <br><br><br>
+                to Sum Of Rs : &nbsp;<b><U><%= Receipt.SUM_OF_RS %></U></b>
+                <br><br><br>
+                Towards ELECTION FUND By Cash/Cheque/Tranfer No :&nbsp; <U><b><%= Receipt.TRANSFER_NUMBER %></b></U>
+                <br><br><br>
+                Drawn On : <b><U><%= Receipt.DRAWN_ON %></U></b>
+                </p>
+        </div>
+        <br><br>
+        <!-- <div class="bottom"> -->
+            <div class="rs">
+                <div class="inside_rs">
+                    <p class="rupee">Rs.</p> 
+                    <p class="rcpt"><U><%= Receipt.RS %></U></p>
+                </div>
+            </div>
+            <br><br>
+        <div class="pan">
+            <p>N.B : Subject to realization of Cheque</p>
+            <p class="pan_no">PAN NO :</p>
+        </div>
+        
+        <br>
+        <div class="end">
+            <p>This Fund is Eligible for Execemption under</p>
+            <p class="line2"> Income Tax Act 1961 u/s 80 GGC / 80GGB</p>
+        </div>
+        <div class="down_bottom">
+            <p class="office">Gujrat Office : </p>
+            <p class="email">Email :</p>
+        </div>
+        
+    
+        <script src="/public/receipt_print_format.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Receipt Page</title>
+        <link rel="stylesheet" href="/public//update_user_receipt.css">
+
+        
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"rel="stylesheet"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <h6 id="name"><%= receipt.NAME %></h6>
+        <h6 id="pan_no"><%= receipt.PAN_NO %></h6>
+        <h6 id="address"><%= receipt.ADDRESS %></h6>
+        <h6 id="sum_of_rs"><%= receipt.SUM_OF_RS %></h6>
+        <h6 id="transfer_number"><%= receipt.TRANSFER_NUMBER %></h6>
+        <h6 id="drawn_on"><%= receipt.DRAWN_ON %></h6>
+        <h6 id="rs"><%= receipt.RS %></h6>
+
+
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <div class="backword">
+            <a href="/user/userpage/edit_receipts"><i class="fa-solid fa-left-long" style="color:aliceblue"></i></a>
+            <!-- <i class="fa-solid fa-right-long"  style="color:aliceblue"></i> -->
+        </div>
+
+        <div class="form-container">
+        
+            <form action="/user/userpage/update_user_receipt" class="main_form" method="post">
+                <h3><b>Update User Receipt</b></h3>
+                <div class="form_group">
+                    <label for="name">RECEIVED WITH THANKS FROM MR./MRS.NAME :</label>
+                    <input class="input_box" type="text" name="NAME" id="NAME" placeholder="<%= receipt.NAME %>">
+                </div>
+                <div class="form_group">
+                    <label for="pancard_no">PANCARD NO :</label>
+                    <input  class="input_box" type="text" id="PAN_NO" name="PAN_NO" placeholder="<%= receipt.PAN_NO %>">
+                </div>
+                <div class="form_group">
+                    <label for="address">ADDRESS :</label>
+                    <input class="input_box" type="text" id="ADDRESS" name="ADDRESS" placeholder="<%= receipt.ADDRESS %>">
+                </div>
+                <div class="form_group">
+                    <label for="sum_of_rs">TO SUM OF RS. :</label>
+                    <input class="input_box"type="number" id="SUM_OF_RS" name="SUM_OF_RS" placeholder="<%= receipt.SUM_OF_RS %>">
+                </div>
+                <div class="form_group">
+                    <label for="transfer_no">Towards ELECTION FUND By Cash/Cheque/Transfer No :</label>
+                    <input class="input_box" type="text" id="TRANSFER_NUMBER" name="TRANSFER_NUMBER" placeholder="<%= receipt.TRANSFER_NUMBER %>">
+                </div>
+                <div class="form-group">
+                    <label for="drawn_on">DRAWN ON :</label>
+                    <input class="input_box" type="text" name="DRAWN_ON" id="DRAWN_ON" placeholder="<%= receipt.DRAWN_ON %>">                
+                </div>
+                <div class="form-group">
+                    <label for="rs">RS. :</label>
+                    <input class="rs" type="number" name="RS" id="RS" placeholder="<%= receipt.RS %>">                
+                </div>
+                <input type="hidden" name="ID" value="<%= receipt.ID %>">
+                <button type="submit" class="submit-btn">Update</button>
+            </form>
+        </div>
+        <script src="/public/update_reviewer_record.js"></script>
+    </body>
+</html>

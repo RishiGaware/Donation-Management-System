@@ -1,0 +1,88 @@
+html,
+body {
+   height: 100vh;
+   width: 100vw;
+   margin: 0; /* Remove default margin */
+   padding: 0; /* Remove default padding */
+}
+
+body {
+   background: linear-gradient(to top, #bac8e0 0%, #6a85b6 100%);
+   font-family: sans-serif;
+   font-weight: 100;
+}
+
+.container {
+  margin-left: 0.4%;
+  height: 87%;
+  width: 99%;
+  overflow: auto; /* Enable scrolling for the container */
+}
+
+table {
+   padding-left: 5%;
+   width: 100%; /* Adjusted width */
+   max-width: 100%; /* Adjusted max-width */
+   border-collapse: collapse;
+   box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+    padding: 20.5px 5px 20px 10px;
+    border-bottom: 5px solid rgb(186, 197, 209);
+    background-color:linear-gradient(#ffffff,);
+    color: #050303;
+}
+
+th {
+   text-align: left;
+   position: sticky;
+   top: 0; /* Fix the header at the top */
+   background-color: #323235;
+   color: beige;
+}
+
+tbody tr:hover {
+   background-color: rgba(255,255,255,0.3);
+}
+
+.backword i {
+  margin-top: 0.5%;
+  margin-left: 1%;
+  margin-right: 1%;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  opacity: 0.5;
+}
+
+.backword i:hover {
+  opacity: 0.7;
+}
+
+.input_box{
+  width: 125px;
+  background-color: #e5efff;
+}
+
+#ADDRESS{
+  width: 250px;
+}
+
+.rs{
+  width: 50px;
+  background-color: #e5efff;
+
+}
+
+#SUM_OF_RS{
+  width: 80px;
+}
+
+#TRANSFER_NUMBER{
+  width: 150px;
+}
+
+h6{
+  display: none;
+}

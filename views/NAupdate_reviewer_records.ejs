@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewer Records page</title>
+    <link rel="stylesheet" href="/public/update_reviewer_records.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">  
+
+</head>
+<body>
+
+                    <!-- <h1><%= ID %></h1> -->
+            <% const id = ID  %>
+                    <h6 id="id"><%= id %> </h6>
+                    <h6 id="count"><%= Count %></h6>
+    
+    <div class="backword">
+        <a href="/reviewer/reviewer_page/reviewer_records"><i class="fa-solid fa-left-long"></i></a>
+        <!-- <i class="fa-solid fa-right-long"  style="color:aliceblue"></i>  -->
+        <h2 style="color: #2b313b; margin-left: 5%;">REVIEWER RECORDS :</h2>
+    </div>
+    <div class="container">
+        <div class="table_head">
+            <table id="data_table">
+                <thead>
+                    <tr class="head">
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">RECEIPT_NO</th>
+                        <!-- <th scope="col">RECEIPT_DATE</th> -->
+                        <th scope="col">PAN_NO</th>
+                        <th scope="col">ADDRESS</th>
+                        <th scope="col">SUM_OF_RS</th>
+                        <th scope="col">TRANSFER_NUMBER</th>
+                        <th scope="col">DRAWN_ON</th>
+                        <th scope="col">RS</th>
+                        <th scope="col">CREATED BY</th>
+                        <th scope="col">UPDATE</th>
+                                <!-- <th scope="col">ACTION</th>
+                                <th scope="col">&nbsp;</th>
+                                <th scope="col">PRINT RECORD</th> -->
+                    </tr>
+                </thead>
+                <div class="table_body">
+                    <tbody>
+                        <% let count = 0%>
+                        <% receipts.forEach(function(receipt) { %>
+                            <tr>
+                                <form action="/reviewer/reviewer_page/reviewer_records_updated" method="post">
+                                    <% if(id == receipt.ID) { %>
+                                        <td><%= ++count %></td>
+                                            <% let receiptDate =  receipt.RECEIPT_DATE ; %>
+                                            <% let parsedDate = new Date(receiptDate); %>
+                                            <% let formattedDate = parsedDate.toDateString(); %>
+                                        <td><input class="input_box" type="text" name="NAME" id="NAME" placeholder="<%= receipt.NAME %>"></td>
+                                        <td><input class="input_box" type="text" id="RECEIPT_NO" name="RECEIPT_NO" placeholder="<%= receipt.RECEIPT_NO %>"></td>
+                                        <!-- <td><%= receipt.RECEIPT_DATE %>"></td> -->
+                                        <td><input  class="input_box" type="text" id="PAN_NO" name="PAN_NO" placeholder="<%= receipt.PAN_NO %>"></td>
+                                        <td><input class="input_box" type="text" id="ADDRESS" name="ADDRESS" placeholder="<%= receipt.ADDRESS %>"></td>
+                                        <td><input class="input_box"type="number" id="SUM_OF_RS" name="SUM_OF_RS" placeholder="<%= receipt.SUM_OF_RS %>"></td>
+                                        <td><input class="input_box" type="text" id="TRANSFER_NUMBER" name="TRANSFER_NUMBER" placeholder="<%= receipt.TRANSFER_NUMBER %>"></td>
+                                        <td><input class="input_box" type="text" name="DRAWN_ON" id="DRAWN_ON" placeholder="<%= receipt.DRAWN_ON %>"></td>
+                                        <td><input class="rs" type="number" name="RS" id="RS" placeholder="<%= receipt.RS %>"></td>
+                                        <td><%= receipt.CREATED_BY %> ( <%= formattedDate %> )</td>
+                                            
+                                            <input type="hidden" name="ID" value="<%= receipt.ID %>">
+                                            <td><button type="submit">&nbsp;&nbsp;&nbsp;Update&nbsp;&nbsp;&nbsp;</button></td>
+                                    <% } else { %>
+                                            <td><%= ++count %></td>
+                                                <% let receiptDate =  receipt.RECEIPT_DATE ; %>
+                                                <% let parsedDate = new Date(receiptDate); %>
+                                                <% let formattedDate = parsedDate.toDateString(); %>
+                                            <td><%= receipt.NAME %></td>
+                                            <td><%= receipt.RECEIPT_NO %></td>
+                                            <!-- <td><%= receipt.RECEIPT_DATE %>"></td> -->
+                                            <td><%= receipt.PAN_NO %></td>
+                                            <td><%= receipt.ADDRESS %></td>
+                                            <td><%= receipt.SUM_OF_RS %></td>
+                                            <td><%= receipt.TRANSFER_NUMBER %></td>
+                                            <td><%= receipt.DRAWN_ON %></td>
+                                            <td><%= receipt.RS %></td>
+                                            <td><%= receipt.CREATED_BY %> ( <%= formattedDate %> )</td>
+                                                <input type="hidden" name="ID" value="<%= receipt.ID %>">
+                                            <td>&nbsp;&nbsp;</td>
+                                    
+                                    <% } %>
+                                </form>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </div>            
+            </table>
+        </div>
+    </div>
+    <script src="/public/update_reviewer_records.js"></script>
+</body>
+</html>

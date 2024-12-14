@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        
+RS
+DRAWN ON
+Towards ELECTION FUND By Cash/Cheque/transfer No
+TO SUM OF RS
+ADDRESS
+PAN NO
+RECEIPT NO
+DATE
+
+CREATE TABLE temp (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
+  RECEIPT_NO VARCHAR(50),
+  RECEIPT_DATE DATE NOT NULL,
+  NAME VARCHAR(50),
+  PAN_NO VARCHAR(50) UNIQUE,
+  ADDRESS VARCHAR(255),
+  SUM_OF_RS  DECIMAL(20),
+  TRANSFER_NUMBER VARCHAR(50),
+  DRAWN_ON VARCHAR(255),
+  RS DECIMAL(20),
+  CREATED_BY VARCHAR(50)
+);
+INSERT INTO temp (RECEIPT_NO, RECEIPT_DATE, NAME, PAN_NO, ADDRESS, SUM_OF_RS, TRANSFER_NUMBER, DRAWN_ON, RS, CREATED_BY) 
+VALUES 
+('Receipt001', '2024-02-24', 'Vivek Sharma', 'ABCDE1234F', '123, Main Street, Bangalore', 1000, '1234567890', 'ICICI Bank', FLOOR(RAND() * 1000) + 1, 'Amit Sharma'),
+('Receipt002', '2024-02-24', 'Neha Patel', 'ABCDE1234F', '123, Main Street, Bangalore', 1500, '1234567891', 'HDFC Bank', FLOOR(RAND() * 1000) + 1, 'Amit Sharma'),
+('Receipt003', '2024-02-24', 'Raj Singh', 'ABCDE1234F', '123, Main Street, Bangalore', 2000, '1234567892', 'Axis Bank', FLOOR(RAND() * 1000) + 1, 'Amit Sharma'),
+('Receipt004', '2024-02-24', 'Priya Gupta', 'ABCDE1234F', '123, Main Street, Bangalore', 2500, '1234567893', 'SBI Bank', FLOOR(RAND() * 1000) + 1, 'Amit Sharma'),
+('Receipt005', '2024-02-24', 'Arun Kumar', 'ABCDE1234F', '123, Main Street, Bangalore', 3000, '1234567894', 'Kotak Bank', FLOOR(RAND() * 1000) + 1, 'Rahul Patel'),
+('Receipt006', '2024-02-24', 'Deepa Sharma', 'ABCDE1234F', '123, Main Street, Bangalore', 3500, '1234567895', 'ICICI Bank', FLOOR(RAND() * 1000) + 1, 'Rahul Patel'),
+('Receipt007', '2024-02-24', 'Ravi Kumar', 'ABCDE1234F', '123, Main Street, Bangalore', 4000, '1234567896', 'HDFC Bank', FLOOR(RAND() * 1000) + 1, 'Rahul Patel'),
+( Receipt008', '2024-02-24', 'Sneha Singh', 'ABCDE1234F', '123, Main Street, Bangalore', 4500, '1234567897', 'Axis Bank', FLOOR(RAND() * 1000) + 1, 'Rahul Patel'),
+('Receipt009', '2024-02-24', 'Amit Kumar', 'ABCDE1234F', '123, Main Street, Bangalore', 5000, '1234567898', 'SBI Bank', FLOOR(RAND() * 1000) + 1, 'Ankit Singh'),
+('Receipt010', '2024-02-24', 'Rahul Gupta', 'ABCDE1234F', '123, Main Street, Bangalore', 5500, '1234567899', 'Kotak Bank', FLOOR(RAND() * 1000) + 1, 'Ankit Singh'),
+('Receipt011', '2024-02-24', 'Anjali Singh', 'ABCDE1234F', '123, Main Street, Bangalore', 6000, '1234567800', 'ICICI Bank', FLOOR(RAND() * 1000) + 1, 'Ankit Singh'),
+('Receipt012', '2024-02-24', 'Rahul Sharma', 'ABCDE1234F', '123, Main Street, Bangalore', 6500, '1234567801', 'HDFC Bank', FLOOR(RAND() * 1000) + 1, 'Ankit Singh'),
+('Receipt013', '2024-02-24', 'Pooja Gupta', 'ABCDE1234F', '123, Main Street, Bangalore', 7000, '1234567802', 'Axis Bank', FLOOR(RAND() * 1000) + 1, 'Rohit Gupta'),
+('Receipt014', '2024-02-24', 'Alok Kumar', 'ABCDE1234F', '123, Main Street, Bangalore', 7500, '1234567803', 'SBI Bank', FLOOR(RAND() * 1000) + 1, 'Rohit Gupta'),
+('Receipt015', '2024-02-24', 'Rohit Sharma', 'ABCDE1234F', '123, Main Street, Bangalore', 8000, '1234567804', 'Kotak Bank', FLOOR(RAND() * 1000) + 1, 'Rohit Gupta'),
+('Receipt015', '2024-02-24', 'Virat Kohli', 'ABCDE1234F', '123, Main Street, Bangalore', 8000, '1234567804', 'Kotak Bank', FLOOR(RAND() * 1000) + 1, 'Rohit Gupta'),
+('Receipt001', '2024-02-24', 'Vivek Sharma', 'ABCDE1234F', '123, Main Street, Bangalore', 1000, '1234567890', 'ICICI Bank', FLOOR(RAND() * 1000) + 1, 'Amit Sharma'),
+('Receipt002', '2024-02-24', 'Neha Patel', 'ABCDE1234F', '123, Main Street, Bangalore', 1500, '1234567891', 'HDFC Bank', FLOOR(RAND() * 1000) + 1, 'Amit Sharma'),
+('Receipt003', '2024-02-24', 'Raj Singh', 'ABCDE1234F', '123, Main Street, Bangalore', 2000, '1234567892', 'Axis Bank', FLOOR(RAND() * 1000) + 1, 'Amit Sharma'),
+('Receipt004', '2024-02-24', 'Priya Gupta', 'ABCDE1234F', '123, Main Street, Bangalore', 2500, '1234567893', 'SBI Bank', FLOOR(RAND() * 1000) + 1, 'Amit Sharma'),
+('Receipt005', '2024-02-24', 'Arun Kumar', 'ABCDE1234F', '123, Main Street, Bangalore', 3000, '1234567894', 'Kotak Bank', FLOOR(RAND() * 1000) + 1, 'Rahul Patel'),
+('Receipt006', '2024-02-24', 'Deepa Sharma', 'ABCDE1234F', '123, Main Street, Bangalore', 3500, '1234567895', 'ICICI Bank', FLOOR(RAND() * 1000) + 1, 'Rahul Patel'),
+('Receipt007', '2024-02-24', 'Ravi Kumar', 'ABCDE1234F', '123, Main Street, Bangalore', 4000, '1234567896', 'HDFC Bank', FLOOR(RAND() * 1000) + 1, 'Rahul Patel'),
+( Receipt008', '2024-02-24', 'Sneha Singh', 'ABCDE1234F', '123, Main Street, Bangalore', 4500, '1234567897', 'Axis Bank', FLOOR(RAND() * 1000) + 1, 'Rahul Patel'),
+('Receipt009', '2024-02-24', 'Amit Kumar', 'ABCDE1234F', '123, Main Street, Bangalore', 5000, '1234567898', 'SBI Bank', FLOOR(RAND() * 1000) + 1, 'Ankit Singh'),
+('Receipt010', '2024-02-24', 'Rahul Gupta', 'ABCDE1234F', '123, Main Street, Bangalore', 5500, '1234567899', 'Kotak Bank', FLOOR(RAND() * 1000) + 1, 'Ankit Singh'),
+('Receipt011', '2024-02-24', 'Anjali Singh', 'ABCDE1234F', '123, Main Street, Bangalore', 6000, '1234567800', 'ICICI Bank', FLOOR(RAND() * 1000) + 1, 'Ankit Singh'),
+('Receipt012', '2024-02-24', 'Rahul Sharma', 'ABCDE1234F', '123, Main Street, Bangalore', 6500, '1234567801', 'HDFC Bank', FLOOR(RAND() * 1000) + 1, 'Ankit Singh'),
+('Receipt013', '2024-02-24', 'Pooja Gupta', 'ABCDE1234F', '123, Main Street, Bangalore', 7000, '1234567802', 'Axis Bank', FLOOR(RAND() * 1000) + 1, 'Rohit Gupta'),
+('Receipt014', '2024-02-24', 'Alok Kumar', 'ABCDE1234F', '123, Main Street, Bangalore', 7500, '1234567803', 'SBI Bank', FLOOR(RAND() * 1000) + 1, 'Rohit Gupta'),
+('Receipt015', '2024-02-24', 'Rohit Sharma', 'ABCDE1234F', '123, Main Street, Bangalore', 8000, '1234567804', 'Kotak Bank', FLOOR(RAND() * 1000) + 1, 'Rohit Gupta'),
+('Receipt015', '2024-02-24', 'Virat Kohli', 'ABCDE1234F', '123, Main Street, Bangalore', 8000, '1234567804', 'Kotak Bank', FLOOR(RAND() * 1000) + 1, 'Rohit Gupta');
+
+
+
+
+insert into defaultadmin(RECEIPT_NO,RECEIPT_DATE,PAN_NO,ADDRESS,SUM_OF_RS,TRANSFER_NUMBER,DRAWN_ON,RS)
+VALUES ("1",2024-01-01,"EAPT2025","New Alkapuri gotri vadodara 391760",50000,"12345","xyz",20000);
+
+-- Inserting random records into the RECEIPT table
+INSERT INTO RECEIPT (RECEIPT_NO, RECEIPT_DATE, NAME, PAN_NO, ADDRESS, SUM_OF_RS, TRANSFER_NUMBER, DRAWN_ON, RS)
+VALUES
+
+('RCPT001', '2024-02-15', 'John Doe', 'ABCDE1234F', '123 Main St, Cityville', 1000, 'TRF123456', 'XYZ Bank', 1000),
+('RCPT002', '2024-02-16', 'Jane Smith', 'FGHIJ5678K', '456 Elm St, Townsville', 1500, 'TRF789012', 'ABC Bank', 1500.50);
+
+INSERT INTO RECEIPT (RECEIPT_NO, RECEIPT_DATE, NAME, PAN_NO, ADDRESS, SUM_OF_RS, TRANSFER_NUMBER, DRAWN_ON, RS)
+VALUES
+
+Amit  Sharma
+Rahul  Patel    
+Ankit  Singh     
+Rohit  Gupta     
+Nitish Shrivastav 
+Rakesh Ranjan     
+Simran  Singhaniya 
+
+INSERT INTO receipt (RECEIPT_NO, RECEIPT_DATE, NAME, PAN_NO, ADDRESS, SUM_OF_RS, TRANSFER_NUMBER, DRAWN_ON, RS, CREATED_BY, APPROVAL_STATUS)
+VALUES
+('Receipt0021',2023-01-01','ABCPN1234A', '12-A, Shanti Vihar, Civil Lines, Delhi', 2000, '1234567890021', 'State Bank of India', 1000, 'Amit Sharma', 'not approved'),
+('Receipt0022','2023-01-01','Isha Singh', 'DEFQW5678B', '23/5, Rani Bagh, Kanpur, Uttar Pradesh', 1500, '1234567890022', 'Punjab National Bank', 750, 'Amit Sharma', 'not approved'),
+('Receipt0023','2023-01-01','Aaradhya Patel', 'GHJRS3456C', '56, Shivaji Nagar, Pune, Maharashtra', 2400, '1234567890023', 'ICICI Bank', 1200, 'Amit Sharma', 'not approved'),
+('Receipt0024', '2023-01-01','Advait Sharma', 'TGBFD6543D', '1B, Tilak Nagar, Jaipur, Rajasthan', 2000, '1234567890024', 'HDFC Bank', 1000, 'Rahul Patel', 'not approved'),
+('Receipt0025','2023-01-01','Diya Joshi', 'HGFER9876E', '44, Lakshmi Nagar, Chennai, Tamil Nadu', 1800, '1234567890025', 'Axis Bank', 900, 'Rahul Patel', 'not approved'),
+('Receipt0026','2023-01-01','Vihaan Kumar', 'OPIUY2345F', '67/3, Gandhi Road, Kolkata, West Bengal', 2300, '1234567890026', 'Canara Bank', 1150, 'Rahul Patel', 'not approved'),
+('Receipt0027','2023-01-01','Aadhya Singh', 'ZXCAS5678G', '31, Rajendra Nagar, Patna, Bihar', 2200, '1234567890027', 'Bank of Baroda', 1100, 'Ankit Singh', 'not approved'),
+('Receipt0028','2023-01-01','Arjun Sharma', 'MLKJI8765H', '89, Vivekananda Colony, Hyderabad, Telangana', 1800, '1234567890028', 'Union Bank of India', 900, 'Ankit Singh', 'not approved'),
+('Receipt0029','2023-01-01','Ananya Gupta', 'QWERT0987I', '12, M.G. Road, Mumbai, Maharashtra', 2200, '1234567890029', 'IDBI Bank', 1100, 'Ankit Singh', 'not approved'),
+('Receipt0030','2023-01-01','Aaryan Kumar', 'POIUY7654J', '78, Rajpur Road, Dehradun, Uttarakhand', 1600, '1234567890030', 'Bank of India', 800, 'Rohit Gupta', 'not approved'),
+('Receipt0031','2023-01-01','Aarohi Sharma', 'LAKSD3456K', '5A, Rajaji Nagar, Bangalore, Karnataka', 2200, '1234567890031', 'State Bank of India', 1100, 'Rohit Gupta', 'not approved'),
+('Receipt0032','2023-01-01','Advika Patel', 'ZXCVB1234L', '22, Surya Nagar, Lucknow, Uttar Pradesh', 1800, '1234567890032', 'Punjab National Bank', 900, 'Rohit Gupta', 'not approved'),
+('Receipt0033','2023-01-01','Reyansh Singh', 'GFDSA5678M', '10/3, Gandhi Chowk, Bhopal, Madhya Pradesh', 2100, '1234567890033','Punjab National Bank', 900, 'Rohit Gupta', 'not approved'),
+('Receipt0034','2023-01-01','Aanya Patel', 'JHFDS4567N', '33, Vivek Vihar, Nagpur, Maharashtra', 1400, '1234567890034', 'HDFC Bank', 700, 'Nitish Shrivastav', 'not approved'),
+('Receipt0035','2023-01-01','Anaya Sharma', 'RETYU3456O', '7B, Ashok Nagar, Ahmedabad, Gujarat', 2100, '1234567890035', 'Axis Bank', 1050, 'Nitish Shrivastav', 'not approved'),
+('Receipt0036','2023-01-01','Shaurya Kumar', 'KIJUH6789P', '25/9, Patel Nagar, Indore, Madhya Pradesh', 2400, '1234567890036', 'Canara Bank', 1200, 'Rakesh Ranjan', 'not approved'),
+('Receipt0037','2023-01-01','Vivaan Gupta', 'MNBVC2345Q', '18, Nehru Colony, Chandigarh, Punjab', 2200, '1234567890037', 'Bank of Baroda', 1100, 'Rakesh Ranjan', 'not approved'),
+('Receipt0038','2023-01-01','Prisha Singh', 'PLOIK0987R', '4, Gandhi Path, Jaipur, Rajasthan', 1800, '1234567890038', 'Union Bank of India', 900, 'Rakesh Ranjan', 'not approved'),
+('Receipt0039','2023-01-01','Ankit Singh', 'QAZWSX1234T', '35, Gandhi Nagar, Patna, Bihar', 2000, '1234567890039', 'State Bank of India', 1000, 'Amit Sharma', 'not approved'),
+('Receipt0040','2023-01-01','Rahul Patel', 'PLMOKI0987U', '29, Model Town, Ludhiana, Punjab', 1800, '1234567890040', 'Punjab National Bank', 900, 'Amit Sharma', 'not approved'),
+('Receipt0041','2023-01-01','Ananya Gupta', 'POIUYT7654V', '17, Gandhi Nagar, Nagpur, Maharashtra', 2200, '1234567890041', 'ICICI Bank', 1100, 'Amit Sharma', 'not approved');
+
+INSERT INTO receipt (RECEIPT_NO, RECEIPT_DATE, NAME, PAN_NO, ADDRESS, SUM_OF_RS, TRANSFER_NUMBER, DRAWN_ON, RS, CREATED_BY, APPROVAL_STATUS)
+VALUES
+('Receipt0021', '2023-01-01', 'Aarav Gupta', 'ABCPN1234A', '12-A, Shanti Vihar, Civil Lines, Delhi', 2000, '1234567890021', 'State Bank of India', 1000, 'Amit Sharma', 'not approved'),
+('Receipt0022', '2023-01-01', 'Isha Singh', 'DEFQW5678B', '23/5, Rani Bagh, Kanpur, Uttar Pradesh', 1500, '1234567890022', 'Punjab National Bank', 750, 'Amit Sharma', 'not approved'),
+('Receipt0023', '2023-01-01', 'Aaradhya Patel', 'GHJRS3456C', '56, Shivaji Nagar, Pune, Maharashtra', 2400, '1234567890023', 'ICICI Bank', 1200, 'Amit Sharma', 'not approved'),
+('Receipt0024', '2023-01-01', 'Advait Sharma', 'TGBFD6543D', '1B, Tilak Nagar, Jaipur, Rajasthan', 2000, '1234567890024', 'HDFC Bank', 1000, 'Rahul Patel', 'not approved'),
+('Receipt0025', '2023-01-01', 'Diya Joshi', 'HGFER9876E', '44, Lakshmi Nagar, Chennai, Tamil Nadu', 1800, '1234567890025', 'Axis Bank', 900, 'Rahul Patel', 'not approved'),
+('Receipt0026', '2023-01-01', 'Vihaan Kumar', 'OPIUY2345F', '67/3, Gandhi Road, Kolkata, West Bengal', 2300, '1234567890026', 'Canara Bank', 1150, 'Rahul Patel', 'not approved'),
+('Receipt0027', '2023-01-01', 'Aadhya Singh', 'ZXCAS5678G', '31, Rajendra Nagar, Patna, Bihar', 2200, '1234567890027', 'Bank of Baroda', 1100, 'Ankit Singh', 'not approved'),
+('Receipt0028', '2023-01-01', 'Arjun Sharma', 'MLKJI8765H', '89, Vivekananda Colony, Hyderabad, Telangana', 1800, '1234567890028', 'Union Bank of India', 900, 'Ankit Singh', 'not approved'),
+('Receipt0029', '2023-01-01', 'Ananya Gupta', 'QWERT0987I', '12, M.G. Road, Mumbai, Maharashtra', 2200, '1234567890029', 'IDBI Bank', 1100, 'Ankit Singh', 'not approved'),
+('Receipt0030', '2023-01-01', 'Aaryan Kumar', 'POIUY7654J', '78, Rajpur Road, Dehradun, Uttarakhand', 1600, '1234567890030', 'Bank of India', 800, 'Rohit Gupta', 'not approved'),
+('Receipt0031', '2023-01-01', 'Aarohi Sharma', 'LAKSD3456K', '5A, Rajaji Nagar, Bangalore, Karnataka', 2200, '1234567890031', 'State Bank of India', 1100, 'Rohit Gupta', 'not approved'),
+('Receipt0032', '2023-01-01', 'Advika Patel', 'ZXCVB1234L', '22, Surya Nagar, Lucknow, Uttar Pradesh', 1800, '1234567890032', 'Punjab National Bank', 900, 'Rohit Gupta', 'not approved'),
+('Receipt0033', '2023-01-01', 'Reyansh Singh', 'GFDSA5678M', '10/3, Gandhi Chowk, Bhopal, Madhya Pradesh', 2100, '1234567890033', 'Punjab National Bank', 900, 'Rohit Gupta', 'not approved'),
+('Receipt0034', '2023-01-01', 'Aanya Patel', 'JHFDS4567N', '33, Vivek Vihar, Nagpur, Maharashtra', 1400, '1234567890034', 'HDFC Bank', 700, 'Nitish Shrivastav', 'not approved'),
+('Receipt0035', '2023-01-01', 'Anaya Sharma', 'RETYU3456O', '7B, Ashok Nagar, Ahmedabad, Gujarat', 2100, '1234567890035', 'Axis Bank', 1050, 'Nitish Shrivastav', 'not approved'),
+('Receipt0036', '2023-01-01', 'Shaurya Kumar', 'KIJUH6789P', '25/9, Patel Nagar, Indore, Madhya Pradesh', 2400, '1234567890036', 'Canara Bank', 1200, 'Rakesh Ranjan', 'not approved'),
+('Receipt0037', '2023-01-01', 'Vivaan Gupta', 'MNBVC2345Q', '18, Nehru Colony, Chandigarh, Punjab', 2200, '1234567890037', 'Bank of Baroda', 1100, 'Rakesh Ranjan', 'not approved'),
+('Receipt0038', '2023-01-01', 'Prisha Singh', 'PLOIK0987R', '4, Gandhi Path, Jaipur, Rajasthan', 1800, '1234567890038', 'Union Bank of India', 900, 'Rakesh Ranjan', 'not approved'),
+('Receipt0039', '2023-01-01', 'Ankit Singh', 'QAZWSX1234T', '35, Gandhi Nagar, Patna, Bihar', 2000, '1234567890039', 'State Bank of India', 1000, 'Amit Sharma', 'not approved'),
+('Receipt0040', '2023-01-01', 'Rahul Patel', 'PLMOKI0987U', '29, Model Town, Ludhiana, Punjab', 1800, '1234567890040', 'Punjab National Bank', 900, 'Amit Sharma', 'not approved'),
+('Receipt0041', '2023-01-01', 'Ananya Gupta', 'POIUYT7654V', '17, Gandhi Nagar, Nagpur, Maharashtra', 2200, '1234567890041', 'ICICI Bank', 1100, 'Amit Sharma', 'not approved');
+
+
+
+
+1 | RCPT001    | 2024-02-15   | John Doe      | ABCDE1234F | 123 Main St, Cityville                  |      1000 | TRF123456       | XYZ Bank |  1000
+
+INSERT INTO defaultadmin(RECEIPT_NO, RECEIPT_DATE, PAN_NO, ADDRESS, SUM_OF_RS, TRANSFER_NUMBER, DRAWN_ON, RS)
+-> VALUES ("1", "2024-01-01", "EAPT2025", "New Alkapuri gotri vadodara 391760", 50000, "12345", "xyz", 20000);
+
+
+ RECEIPT_NO     
+ RECEIPT_DATE   
+ NAME            
+ PAN_NO          
+ADDRESS         
+ SUM_OF_RS       
+ TRANSFER_NUMBER 
+ DRAWN_ON        
+ RS              
+CREATED_BY                  
+APPROVAL_STATUS 
+
+
+database Queries{
+    const result = pool.query(`select * from admin`);
+  console.log(result);
+
+
+  CREATE TABLE temp (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50),
+    lastname VARCHAR(50),
+    username VARCHAR(50) UNIQUE,
+    password VARCHAR(255),
+    role VARCHAR(100)
+);
+
+create table org(
+    id INT AUTO_INCREMENT PRIMARY Key,
+    name VARCHAR(100),
+    reg_no VARCHAR(50),
+    pan_no VARCHAR(50) ,
+    gujrat_office VARCHAR(250),
+    email VARCHAR(50)
+);
+
+    ALTER TABLE users MODIFY password VARCHAR(50) COLLATE utf8_bin;
+
+
+insert into temp(firstname,lastname,username,password,role)
+     values("Default","Admin1","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin2","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin3","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin4","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin5","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin6","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin7","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin8","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin9","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin10","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin11","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin12","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin13","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin14","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin15","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin16","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin17","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin18","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin19","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+     values("Default","Admin20","defaultadmin3@gmail.com","defaultadmin3@1234","defaultadmin");
+
+
+create table defaultadmin(
+     id INT AUTO_INCREMENT PRIMARY KEY,
+     username VARCHAR(50) UNIQUE,
+     password VARCHAR(400),
+     role VARCHAR(50)
+)
+
+
+
+insert into defaultadmin(username,password,role)
+VALUES ("admin3@gmail.com","123","default");
+("admin2@gmail.com","123","default");
+
+
+    insert into user(id,firstname,lastname,username,password,role)
+     values(1,"user","one","one@gmail.com","123","user");
+
+     insert into default(id,username,password,role)
+     values(1,"default@gmail.com","123","default");
+
+
+insert into user(id,firstname,lastname,username,password,role)
+VALUES (2,"second","user","user2@gmail.com","123","user"),
+       (3,"third","user","user3@gmail.com","123","user"),
+       (4,"fourth","user","user4@gmail.com","123","user"),
+       (5,"fifth","user","user5@gmail.com","123","user")
+}
+
+
+UPDATE admin
+SET username = LOWER(username);
+
+ALTER TABLE reviewer MODIFY password  varchar(50) COLLATE utf8_bin;
+
+
+INSERT INTO users (firstname, lastname, username, password, role)
+VALUES
+    ('Rishi', 'Patil', 'rishi@gmail.com', 'Rishi@1234', 'admin'),
+    ('Ishaan', 'Sharma', 'ishaan@gmail.com', 'Ishaan@1234', 'admin'),
+    ('Aditya', 'Patel', 'aditya@gmail.com', 'Aditya@1234', 'admin'),
+    ('Aryan', 'Singh', 'aryan@gmail.com', 'Aryan@1234', 'admin'),
+    ('Siddarth', 'Jadhav', 'sid@gmail.com', 'Sid@1234', 'admin');
+
+    1 | admin1@gmail.com | 123      | default
+
+INSERT INTO users (firstname, lastname, username, password, role)
+VALUES
+    ('Default', 'admin1', 'defaultadmin1@gmail.com', 'defaultadmin1@1234', 'defaultadmin'),
+    ('Default', 'admin2', 'defaultadmin2@gmail.com', 'defaultadmin2@1234', 'defaultadmin');
+
+
+    INSERT INTO users (firstname, lastname, username, password, role)
+    VALUES
+        ('Aman', 'Gupta', 'aman@gmail.com', 'Aman@1234', 'reviewer'),
+        ('Rishi', 'Patil', 'rishi@gmail.com', 'Rishi@1234', 'admin'),
+        ('Ishaan', 'Sharma', 'ishaan@gmail.com', 'Ishaan@1234', 'admin'),
+        ('Aditya', 'Patel', 'aditya@gmail.com', 'Aditya@1234', 'admin'),
+        ('Aryan', 'Singh', 'aryan@gmail.com', 'Aryan@1234', 'admin'),
+        ('Siddarth', 'Jadhav', 'sid@gmail.com', 'Sid@1234', 'admin');
+
+        ALTER TABLE users
+        MODIFY COLUMN role ENUM('user', 'admin', 'reviewer', 'defaultadmin');
+
+        ALTER TABLE receipt
+        ADD approval_status ENUM("approved","not approved");
+        
+        ALTER TABLE receipt
+        RENAME COLUMN approval_status TO APPROVAL_STATUS;
+        DEFAULT 'not approved'
+
+        ALTER TABLE receipt
+        ALTER COLUMN APPROVAL_STATUS ENUM("approved","not approved") DEFAULT 'not approved';
+
+ALTER TABLE receipt
+MODIFY COLUMN APPROVAL_STATUS ENUM('approved', 'not approved') DEFAULT 'not approved';
+
+UPDATE receipt
+SET APPROVAL_STATUS = 'not approved'
+WHERE APPROVAL_STATUS IS NULL;
+
+
+
+    <h2>The page that you're looking for used information that you entered. Returning to that page might cause any action you took to be repeated. Do you want to continue?</h2>
+
+
+    <div class="social_media">
+        <ul>
+          <a href="#"><i id="facebook" class="fa-brands fa-facebook"></i></i></a>
+          <a href="#"><i id="x" class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i id="instagram" class="fa-brands fa-instagram"></i></i></a>
+          <a href="#"><i id="youtube" class="fa-brands fa-youtube"></i></a>
+        </ul>
+      </div>
+
+
+</body>
+</html>
+
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user','reviewer','defaultadmin') NOT NULL
+);

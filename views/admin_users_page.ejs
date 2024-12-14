@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Users Page</title>
+    <link rel="stylesheet" href="/public/admin_users_page.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">  
+
+</head>
+<body>
+    <div class="backword">
+        <a href="/admin/adminpage"><i class="fa-solid fa-left-long"></i></a>
+        <!-- <i class="fa-solid fa-right-long"  style="color:aliceblue"></i>  -->
+        <h2 style="color: rgb(49, 49, 49); margin-left: 5%;">USERS :</h2>
+
+    </div>
+    <div class="container">
+        <div class="table_head">
+            <table>
+                <thead>
+                    <tr class="head">
+                        <th scope="col">ID</th>
+                        <th scope="col">USERNAME</th>
+                        <th scope="col">ROLE</th>
+                        <th scope="col">EMAIL</th>
+                            <!-- <th scope="col">UPDATE</th> -->
+                    </tr>
+                </thead>
+                <div class="table_body">
+                    <tbody>
+                        <% let count = 0%>
+                        <% users.forEach(function(users) { %>
+                            <tr>
+                                <form action="" method="post">
+                                    <td><%= ++count %></td>
+                                    <td><%= users.firstname %> <%= users.lastname %></td>
+                                    <td><%= users.role %></td>
+                                    <td><%= users.username %></td>
+                                        
+                                        <input type="hidden" name="ID" value="<%= users.id %>">
+                                            <!-- <td><button type="submit">Update</button></td> -->
+                                </form>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </div>            
+            </table>
+        </div>
+</div>
+</body>
+</html>

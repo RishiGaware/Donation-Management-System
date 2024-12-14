@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Reviewer Record Page</title>
+</head>
+<body>
+    <!-- <%= id %> -->
+    <h2>Approve this Record?</h2>
+    <form action="/aprove/reviewer/recoord/action" method="post">
+        <input type="hidden" name="receipt_ID" value="<%= id %>">
+        <input type="hidden" name="ID" value="${req.query.ID}">
+        <button type="submit" name="action" value="yes">Yes</button>
+        <button type="submit" name="action" value="no">No</button>
+    </form>
+</body>
+</html>

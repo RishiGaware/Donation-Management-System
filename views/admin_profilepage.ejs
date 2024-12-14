@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page </title>
+    <link rel="stylesheet" href="/public/profilepage.css">
+</head>
+<body>
+    <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<div class="form-container">
+
+    <form action="/admin/adminpage/profile_page" method="post">
+        <h3>Profile</h3>
+        <div class="form_group">
+            <label for="lastname">Name  :</label>
+            <input type="text" id="lastname" name="lastname" placeholder="<%= profile.firstname %> <%= profile.lastname %>" autocomplete="off">
+        </div>
+        <div class="form_group">
+            <label for="username">username  :</label>
+            <input type="email" id="username" name="username" placeholder="<%= profile.username %>" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="password">Password  :</label>
+            <input type="password" name="password" id="password" placeholder="<%= profile.password %>" >
+        </div>
+        <div class="form-group">
+            <label for="role">Role  :</label>
+            <input type="text" name="role" id="role" placeholder="<%= profile.role %>" >
+        </div>
+
+        <button type="submit" class=submit-btn"">Update</button>
+    </form>
+</div>
+</body>
+</html>
